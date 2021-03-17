@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  flex-direction: row;
+
+  .fa-arrow-left {
+    padding: 15px 0px 0px 10px;
+    color: #353535;
+  }
+
+  .logo_menu {
+    width: 40%;
+    padding: 15px 25% 10px 22%;
+  }
+
+  .logo {
+    width: 40%;
+    padding: 15px 30% 10px 30%;
+  }
+
+  .hidden_index {
+    display: none;
+  }
+}
