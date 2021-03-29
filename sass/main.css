@@ -1,5 +1,166 @@
+@charset "UTF-8";
+/* loading spinner index.html */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@-webkit-keyframes spinningOne {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-width: 2px;
+    z-index: 1;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    border-width: 2px;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border-width: 2px;
+    z-index: -2;
+  }
+}
+@keyframes spinningOne {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-width: 2px;
+    z-index: 1;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    border-width: 2px;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border-width: 2px;
+    z-index: -2;
+  }
+}
+
+/* apparition de la page menu */
+@-webkit-keyframes background_spinning {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes background_spinning {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* animation d'apparition de la coche */
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translate(50%);
+            transform: translate(50%);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes slide {
+  from {
+    -webkit-transform: translate(50%);
+            transform: translate(50%);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+/* rotation de la coche */
+@-webkit-keyframes rotate_circle {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate_circle {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* apparition de la page menu */
+@-webkit-keyframes apparition {
+  from {
+    opacity: 0;
+    margin-bottom: 100px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 5px;
+  }
+}
+@keyframes apparition {
+  from {
+    opacity: 0;
+    margin-bottom: 100px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 5px;
+  }
+}
+
+/* remplissage coeur favori */
+@-webkit-keyframes heart {
+  0% {
+    -webkit-transition-property: background;
+    transition-property: background;
+    -webkit-transition-duration: 3s;
+            transition-duration: 3s;
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes heart {
+  0% {
+    -webkit-transition-property: background;
+    transition-property: background;
+    -webkit-transition-duration: 3s;
+            transition-duration: 3s;
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -38,7 +199,7 @@ header .fa-arrow-left {
 
 header .logo_menu {
   width: 40%;
-  padding: 15px 25% 10px 22%;
+  padding: 15px 30% 10px 27%;
 }
 
 header .logo {
@@ -134,10 +295,38 @@ footer a:hover {
   font-weight: lighter;
 }
 
-.section_menu .nom_restaurant .far {
-  display: inline-block;
-  padding: 30px 40px 0px 0px;
-  color: #575757;
+.section_menu .nom_restaurant input {
+  visibility: hidden;
+}
+
+.section_menu .nom_restaurant input + label {
+  display: block;
+  -webkit-animation: 3s heart linear;
+          animation: 3s heart linear;
+}
+
+.section_menu .nom_restaurant input + label .fas {
+  display: none;
+}
+
+.section_menu .nom_restaurant input + label .far {
+  display: block;
+  padding: 30px 20px 30px 10px;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section_menu .nom_restaurant input:checked + label .fas {
+  padding: 30px 20px 30px 10px;
+  display: block;
+  background: -webkit-linear-gradient(175deg, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section_menu .nom_restaurant input:checked + label .far {
+  display: none;
 }
 
 .section_menu .categorie {
@@ -147,6 +336,7 @@ footer a:hover {
 
 .section_menu .categorie h3 {
   font-weight: normal;
+  margin: 20px 0px 20px 0px;
 }
 
 .section_menu .categorie .plat {
@@ -165,44 +355,82 @@ footer a:hover {
   width: 90%;
   border-radius: 10px 10px 10px 10px;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0px;
   border-color: transparent;
   -webkit-box-shadow: 1px 1px 10px 1px silver;
           box-shadow: 1px 1px 10px 1px silver;
-  margin: 5px 0px 5px 0px;
+  margin: 10px 0px 10px 0px;
   background-color: white;
+  overflow: hidden;
+  -webkit-animation: 1.5s linear 0.2s apparition;
+          animation: 1.5s linear 0.2s apparition;
+  /*durée, fonction, keyframes */
 }
 
 .section_menu .categorie .plat .nom_plat {
   display: block;
-  height: 40px;
+  height: 35px;
   padding: 5px 0px 0px 5px;
   font-size: 0.9em;
-  width: 80%;
+  width: 100%;
+  position: relative;
 }
 
 .section_menu .categorie .plat .nom_plat h4 {
   display: block;
   margin: 0;
-  width: 90%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.section_menu .categorie .plat .nom_plat span {
-  display: inline-block;
-  width: 90%;
+.section_menu .categorie .plat .nom_plat .description {
+  display: block;
+  max-width: 80%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.section_menu .categorie .plat .price {
-  display: inline-block;
-  height: 20px;
-  padding: 10px 10px 0px 0px;
+.section_menu .categorie .plat .nom_plat .price {
   font-weight: bold;
+  padding-left: 10px;
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
+
+.section_menu .categorie .plat .check {
+  background: #99E2D0;
+  width: 50px;
+  height: inherit;
+  border-radius: 0px 10px 10px 0px;
+  border-width: 2px;
+  border-color: #99E2D0;
+  display: none;
+}
+
+.section_menu .categorie .plat .check .fa-check-circle {
+  padding: 25%;
+  -webkit-animation: 0.4s linear rotate_circle;
+          animation: 0.4s linear rotate_circle;
+}
+
+.section_menu .categorie .plat .check .fa-check-circle:before {
+  color: white;
+  background-color: #99E2D0;
+  border-radius: 50%;
+  border-color: #99E2D0;
+  border-width: 2px;
+}
+
+.section_menu .plat:hover .check {
+  display: block;
+  -webkit-animation: 0.2s linear slide;
+          animation: 0.2s linear slide;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /*empeche la repetition */
 }
 
 .section_menu button.commander {
@@ -211,14 +439,47 @@ footer a:hover {
   width: 150px;
 }
 
+/* loading spinner */
+.loading_spinner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-top: 2px solid #9356DC;
+  border-bottom: 2px solid #9356DC;
+  border-radius: 50%;
+  margin: 100px;
+  -webkit-animation: spinningOne 1.5s linear;
+          animation: spinningOne 1.5s linear;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /*empeche la repetition */
+}
+
+.index {
+  -webkit-animation-name: background_spinning;
+          animation-name: background_spinning;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: steps(1, end);
+          animation-timing-function: steps(1, end);
+}
+
 .localisation {
   background-color: #eaeaea;
   color: #353535;
   height: 20px;
   text-align: center;
-  padding: 15px;
+  padding: 10px 20% 10px 20%;
   -webkit-box-shadow: inset 0 5px 5px -5px grey;
           box-shadow: inset 0 5px 5px -5px grey;
+}
+
+.localisation .selection_localisation {
+  width: 100px;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .explorateur {
@@ -289,6 +550,10 @@ h2 {
   height: 50px;
   width: 90%;
   margin: 10px 0px 10px 0px;
+}
+
+.fonctionnement .step:hover {
+  background-color: #efb1ff;
 }
 
 .fonctionnement .step .number {

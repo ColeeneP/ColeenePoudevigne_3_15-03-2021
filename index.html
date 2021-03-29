@@ -11,7 +11,9 @@
     </head>
 
     <body>
-		<header>  <!-- en tête de la page -->
+            <div class="loading_spinner"></div>
+
+		<header class="index">  <!-- en tête de la page -->
 		    <nav class="hidden_index">  <!-- menu de navigation -->
                 <i class="fas fa-arrow-left"></i> 
             </nav>
@@ -19,10 +21,10 @@
             <img class ="logo" src="public/img/logo/ohmyfood.png" />		
 		</header>
 
-	<main>
+	<main class="index">
 	    <section class="localisation"> <!-- localisation -->
             <i class="fas fa-map-marker-alt"></i> 
-            <span>Paris, Belleville</span>
+            <input class="selection_localisation" type="text" value="Paris, Belleville" />
         </section> 
 
         <section class="explorateur"> <!-- explorateur -->
@@ -60,7 +62,7 @@
                             <h3>La palette du goût</h3>
                             <span>Ménilmontant</span>
                         </div> 
-                            <i class="far fa-heart fa-lg"></i>
+                            <i class="fas fa-heart fa-lg"></i>
                     </figcaption>
                 </figure>
             </a>
@@ -73,7 +75,7 @@
                             <h3>La note enchantée</h3>
                             <span>Charonne</span>
                         </div>    
-                        <i class="far fa-heart fa-lg"></i>
+                        <i class="fas fa-heart fa-lg"></i>
                     </figcaption>
                 </figure>
             </a>
@@ -86,7 +88,7 @@
                             <h3>A la française</h3>
                             <span>Cité Rouge</span>
                         </div>    
-                        <i class="far fa-heart fa-lg"></i>
+                        <i class="fas fa-heart fa-lg"></i>
                     </figcaption>
                 </figure>
             </a>
@@ -99,7 +101,7 @@
                             <h3>Le délice des sens</h3>
                             <span>Folie-Méricourt</span>
                         </div>    
-                        <i class="far fa-heart fa-lg"></i>
+                        <i class="fas fa-heart fa-lg"></i>
                     </figcaption>
                 </figure>
             </a>

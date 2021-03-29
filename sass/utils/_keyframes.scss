@@ -1,0 +1,83 @@
+/* loading spinner index.html */
+@keyframes spinningOne {
+    0% {
+        transform: rotate(0deg);
+        border-width: 2px;
+        z-index: 1;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        border-width: 2px;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-width: 2px;
+        z-index: -2;
+    }
+}
+
+/* apparition de la page menu */
+@keyframes background_spinning {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* animation d'apparition de la coche */
+@keyframes slide {
+    from {
+        transform: translate(50%);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+/* rotation de la coche */
+@keyframes rotate_circle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* apparition de la page menu */
+@keyframes apparition {
+    from {
+        opacity: 0;
+        margin-bottom: 100px;
+    }
+
+    to {
+        opacity: 1;
+        margin-bottom: 5px;
+    }
+}
+
+/* remplissage coeur favori */
+@keyframes heart {
+    0% {
+        transition-property: background;
+        transition-duration: 3s;
+        transition-timing-function: linear;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
