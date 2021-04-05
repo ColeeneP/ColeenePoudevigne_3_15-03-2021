@@ -6,45 +6,67 @@
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-    border-width: 2px;
+    border-width: 3px;
     z-index: 1;
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    border-width: 2px;
   }
   50% {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
+    border-width: 3px;
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
     border-width: 2px;
   }
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
-    border-width: 2px;
+    border-width: 3px;
     z-index: -2;
+    opacity: 0;
   }
 }
 @keyframes spinningOne {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-    border-width: 2px;
+    border-width: 3px;
     z-index: 1;
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    border-width: 2px;
   }
   50% {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
+    border-width: 3px;
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
     border-width: 2px;
   }
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
-    border-width: 2px;
+    border-width: 3px;
     z-index: -2;
+    opacity: 0;
   }
 }
 
-/* apparition de la page menu */
+/* apparition de la page index */
 @-webkit-keyframes background_spinning {
   from {
-    opacity: 0.4;
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -52,7 +74,7 @@
 }
 @keyframes background_spinning {
   from {
-    opacity: 0.4;
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -134,13 +156,19 @@
             transition-duration: 3s;
     -webkit-transition-timing-function: linear;
             transition-timing-function: linear;
+    -webkit-transform: scale3D(0.1, 1, 0.1);
+            transform: scale3D(0.1, 1, 0.1);
     opacity: 0;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
+    -webkit-transform: scale3D(0.6, 1, 0.6);
+            transform: scale3D(0.6, 1, 0.6);
   }
   100% {
     opacity: 1;
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
   }
 }
 @keyframes heart {
@@ -151,13 +179,19 @@
             transition-duration: 3s;
     -webkit-transition-timing-function: linear;
             transition-timing-function: linear;
+    -webkit-transform: scale3D(0.1, 1, 0.1);
+            transform: scale3D(0.1, 1, 0.1);
     opacity: 0;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
+    -webkit-transform: scale3D(0.6, 1, 0.6);
+            transform: scale3D(0.6, 1, 0.6);
   }
   100% {
     opacity: 1;
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
   }
 }
 
@@ -167,7 +201,7 @@ body {
 }
 
 button {
-  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  background: linear-gradient(175deg, #ff79d9, #9356DC);
   border-radius: 20px 20px 20px 20px;
   border-width: 0px;
   -webkit-box-shadow: 1px 2px 10px 1px grey;
@@ -182,6 +216,10 @@ button {
   margin-top: 20px;
 }
 
+button:hover {
+  background: linear-gradient(175deg, #ffa9e7, #a275da);
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,11 +228,17 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 60px;
 }
 
 header .fa-arrow-left {
-  padding: 15px 0px 0px 10px;
+  padding: 19px 0px 0px 10px;
   color: #353535;
+}
+
+header a {
+  display: block;
+  margin: auto;
 }
 
 header .logo_menu {
@@ -301,8 +345,6 @@ footer a:hover {
 
 .section_menu .nom_restaurant input + label {
   display: block;
-  -webkit-animation: 3s heart linear;
-          animation: 3s heart linear;
 }
 
 .section_menu .nom_restaurant input + label .fas {
@@ -312,17 +354,24 @@ footer a:hover {
 .section_menu .nom_restaurant input + label .far {
   display: block;
   padding: 30px 20px 30px 10px;
-  background: black;
+  background: #353535;
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.section_menu .nom_restaurant input:checked + label {
+  -webkit-animation: 300ms heart linear;
+          animation: 300ms heart linear;
 }
 
 .section_menu .nom_restaurant input:checked + label .fas {
   padding: 30px 20px 30px 10px;
   display: block;
-  background: -webkit-linear-gradient(175deg, #FF79DA, #9356DC);
+  background: linear-gradient(175deg, #ff79d9, #9356DC);
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .section_menu .nom_restaurant input:checked + label .far {
@@ -337,6 +386,12 @@ footer a:hover {
 .section_menu .categorie h3 {
   font-weight: normal;
   margin: 20px 0px 20px 0px;
+}
+
+.section_menu .categorie h3 .style_h3 {
+  border-bottom: 3px solid;
+  border-color: #99E2D0;
+  padding-bottom: 5px;
 }
 
 .section_menu .categorie .plat {
@@ -439,15 +494,152 @@ footer a:hover {
   width: 150px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .index {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .index .localisation {
+    width: 100%;
+    z-index: 2;
+  }
+  .index .explorateur {
+    width: 44%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: white;
+    border-right: solid #f2f2f2 1px;
+  }
+  .index .explorateur h2 {
+    padding-bottom: 10px;
+  }
+  .index .fonctionnement {
+    width: 44%;
+    text-align: center;
+    padding: 20px;
+  }
+  .index .fonctionnement h2 {
+    padding-bottom: 10px;
+  }
+  footer {
+    text-align: center;
+  }
+  footer img {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .index {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .index .localisation {
+    width: 100%;
+    z-index: 2;
+  }
+  .index .explorateur {
+    width: 45%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: white;
+    border-right: solid #f2f2f2 1px;
+  }
+  .index .explorateur h2 {
+    padding-bottom: 10px;
+  }
+  .index .fonctionnement {
+    width: 45%;
+    text-align: center;
+    padding: 20px;
+  }
+  .index .fonctionnement h2 {
+    padding-bottom: 10px;
+  }
+  .index .restaurant {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .index .restaurant h2 {
+    display: inline;
+    width: 100%;
+    text-align: center;
+  }
+  .index .restaurant a {
+    width: 50%;
+  }
+  .index .restaurant figure {
+    max-height: 400px;
+  }
+  .section_menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section_menu .nom_restaurant {
+    width: 100%;
+  }
+  .section_menu .categorie {
+    width: 30%;
+  }
+  footer {
+    text-align: center;
+    height: 150px;
+    padding-top: 30px;
+  }
+  footer img {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 /* loading spinner */
 .loading_spinner {
   position: absolute;
   width: 100px;
   height: 100px;
-  border-top: 2px solid #9356DC;
-  border-bottom: 2px solid #9356DC;
+  border-top: 3px solid #9356DC;
+  border-bottom: 3px solid #9356DC;
   border-radius: 50%;
-  margin: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  padding: 10px;
   -webkit-animation: spinningOne 1.5s linear;
           animation: spinningOne 1.5s linear;
   -webkit-animation-duration: 3s;
@@ -553,7 +745,11 @@ h2 {
 }
 
 .fonctionnement .step:hover {
-  background-color: #efb1ff;
+  background-color: #f2eafb;
+}
+
+.fonctionnement .step:hover .fas {
+  color: #9356DC;
 }
 
 .fonctionnement .step .number {
@@ -566,7 +762,7 @@ h2 {
   border-color: transparent;
   color: white;
   background-color: #9356DC;
-  margin-left: -3%;
+  margin-left: -10px;
 }
 
 .fonctionnement .step .fas {
@@ -604,6 +800,7 @@ h2 {
 .restaurant a {
   text-decoration: none;
   color: black;
+  z-index: 1;
 }
 
 .restaurant a:hover {
@@ -612,10 +809,9 @@ h2 {
 }
 
 .restaurant figure {
-  max-width: 90%;
+  position: relative;
   background-color: white;
   border-radius: 20px 20px 20px 20px;
-  max-height: 200px;
   margin: 20px 20px 20px 20px;
 }
 
@@ -625,6 +821,20 @@ h2 {
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.restaurant figure .new {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: #99E2D0;
+  color: #278870;
+  width: auto;
+  padding: 7px 15px 7px 15px;
+  border-radius: 2px;
+  font-family: "Roboto";
+  font-weight: bold;
 }
 
 .restaurant figure figcaption {
@@ -658,9 +868,44 @@ h2 {
   margin: 0;
 }
 
-.restaurant figure figcaption .fa-heart {
+.restaurant figure figcaption input {
+  visibility: hidden;
+}
+
+.restaurant figure figcaption input + label {
   display: block;
-  padding: 10px 30px 0px 0px;
-  color: #575757;
+}
+
+.restaurant figure figcaption input + label .fas {
+  display: none;
+}
+
+.restaurant figure figcaption input + label .far {
+  display: block;
+  padding: 10px 30px 1px 0px;
+  background: #353535;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 2;
+}
+
+.restaurant figure figcaption input:checked + label {
+  -webkit-animation: 300ms heart linear;
+          animation: 300ms heart linear;
+}
+
+.restaurant figure figcaption input:checked + label .fas {
+  padding: 10px 30px 1px 0px;
+  display: block;
+  background: linear-gradient(175deg, #ff79d9, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 2;
+}
+
+.restaurant figure figcaption input:checked + label .far {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

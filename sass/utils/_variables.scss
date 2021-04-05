@@ -1,6 +1,8 @@
 $primary-color: #9356DC;
-$second-color: #FF79DA;
+$second-color: #ff79d9;
 $third-color: #99E2D0;
+$degrade_color: linear-gradient(175deg,$second-color, $primary-color);
+$hover_button: linear-gradient(175deg,#ffa9e7, #a275da);
 
 $first-police: 'Shrikhand';
 $text-police: 'Roboto';

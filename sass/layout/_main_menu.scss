@@ -39,7 +39,7 @@
 
             input + label {
                 display: block;
-                animation: 3s heart linear;
+                
 
                     .fas {
                         display: none;
@@ -48,19 +48,22 @@
                     .far {
                         display: block;
                         padding: 30px 20px 30px 10px;
-                        background: black;
+                        background: #353535;
+                        background-clip: text;
                         -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        color: transparent;
                     }
             }
 
             input:checked + label {
+                animation: 300ms heart linear;
                     .fas {
                         padding: 30px 20px 30px 10px;
                         display: block;
-                        background: -webkit-linear-gradient(175deg, $second-color, $primary-color);
+                        background: $degrade_color;
+                        background-clip: text;
                         -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        color: transparent;
                     }
 
                     .far {
@@ -76,6 +79,12 @@
                 h3 {
                     font-weight: normal;
                     margin: 20px 0px 20px 0px;
+
+                    .style_h3 {
+                        border-bottom: 3px solid;
+                        border-color: $third-color;
+                        padding-bottom: 5px;
+                    }
                 }
 
                 .plat {
