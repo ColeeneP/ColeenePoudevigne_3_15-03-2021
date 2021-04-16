@@ -150,6 +150,20 @@
                     border-radius: 20px 20px 0px 0px;
                     height: 150px;
                     object-fit: cover;
+
+
+                }
+
+                .image_position1 {
+                    object-position: bottom;
+
+                    @media (min-width: 500px) {
+                        object-position: 25% 50%;
+                    }
+                }
+
+                .image_position2 {
+                    object-position: right 60%;
                 }
 
                 .new {
@@ -182,15 +196,10 @@
                                 margin: 0;
                             }
                         }
-
-                        input {
-                            visibility: hidden;
-                        }
             
-                        input + label {
+                        .heart {
                             display: block;
                             
-            
                                 .fas {
                                     display: none;
                                 }
@@ -206,7 +215,7 @@
                                 }
                         }
             
-                        input:checked + label {
+                        .heart:hover {
                             animation: 300ms heart linear;
                                 .fas {
                                     padding: 10px 30px 1px 0px;
