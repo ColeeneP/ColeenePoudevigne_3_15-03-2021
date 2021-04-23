@@ -101,11 +101,12 @@
                     background-color: white;
                     overflow: hidden;
                     animation: 1.5s linear 0.2s apparition; /*durée, fonction, keyframes */
+                    
 
                         .nom_plat {
                             display: block;
                             height: 35px;
-                            padding: 5px 0px 0px 5px;
+                            padding: 10px 0px 0px 10px;
                             font-size: 0.9em;
                             width: 100%;
                             position: relative;
@@ -136,36 +137,42 @@
                         }
 
                         .check {
-                            
                             background: $third_color;
-                            width: 50px;
-                            height: inherit;
+                            width: 65px;
                             border-radius: 0px 10px 10px 0px;   
                             border-width: 2px;      
                             border-color: $third_color;
-                            display: none;
+                            margin: 0px -80px 0px 0px;
+                            transition-duration: 600ms;
+
+                            .rotate_check {
+                                padding-top: 25%;
+                                padding-left: 30%;
+
+                            }
                             
                             .fa-check-circle {
-                                padding: 25%;
-                                animation: 0.4s linear rotate_circle;
 
-                                &:before {
                                     color: white;
                                     background-color: $third_color;
                                     border-radius: 50%;
                                     border-color: $third_color;
-                                    border-width: 2px;
-                                }
+                                    border-width: 2px; 
+                                    transform: rotate(0);
+                                    transition: 0.6s ease-in-out;
                             }
+                        }
+
+                        &:hover .check { 
+                            margin-right: -1px;
+                        }        
+                            
+                        &:hover .fa-check-circle {
+                            transform: rotate(360deg);
                         }
                 }
         }
 
-    .plat:hover .check {
-        display: block;
-        animation: 0.2s linear slide;
-        animation-fill-mode: forwards; /*empeche la repetition */
-    }
 
     button.commander {
         display: block;

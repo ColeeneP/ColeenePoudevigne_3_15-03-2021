@@ -69,6 +69,20 @@
         .categorie{
             width: 30%;
         }
+
+        .plat {
+            height: 60px; 
+            
+            .description {
+                padding-top: 10px;
+            }
+
+            .rotate_check {
+                padding-top: 40%;
+                padding-left: 30%;
+            }
+        }
+
 }
 
 footer {

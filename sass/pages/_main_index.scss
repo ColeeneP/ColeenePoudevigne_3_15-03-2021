@@ -73,7 +73,6 @@
             align-items: center;
             background-color: #f2f2f2;
             border-radius: 15px 15px 15px 15px;
-            box-shadow: #898989;
             height: 50px;
             width: 90%;
             margin: 10px 0px 10px 0px;
@@ -199,39 +198,26 @@
             
                         .heart {
                             display: block;
-                            
-                                .fas {
-                                    display: none;
-                                }
-            
-                                .far {
-                                    display: block;
-                                    padding: 10px 30px 1px 0px;
-                                    background: #353535;
-                                    background-clip: text;
-                                    -webkit-background-clip: text;
-                                    color: transparent;
-                                    z-index: 2;
-                                }
-                        }
-            
-                        .heart:hover {
-                            animation: 300ms heart linear;
-                                .fas {
-                                    padding: 10px 30px 1px 0px;
-                                    display: block;
-                                    background: $degrade_color;
-                                    background-clip: text;
-                                    -webkit-background-clip: text;
-                                    color: transparent;
-                                    z-index: 2;
-                                }
-            
-                                .far {
-                                    display: none;
-                                }
-                        }
+                            position: absolute;
+                            bottom: 10%; 
+                            right: 3%;
+                            }
 
+                            .fa-heart {
+                                color: black;
+                                font-size: 1.3em;
+
+                                &:before {
+                                    content: "\f004";
+                                    transition: color 0.5s ease-out;
+                                }
+
+                                &:hover:before{
+                                    color: #ce68da;
+                                    font-weight: bold;
+                                    cursor: pointer;
+                                }
+                            }
                 }
         }
 

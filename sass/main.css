@@ -81,50 +81,6 @@
   }
 }
 
-/* animation d'apparition de la coche */
-@-webkit-keyframes slide {
-  from {
-    -webkit-transform: translate(50%);
-            transform: translate(50%);
-  }
-  to {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-@keyframes slide {
-  from {
-    -webkit-transform: translate(50%);
-            transform: translate(50%);
-  }
-  to {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-
-/* rotation de la coche */
-@-webkit-keyframes rotate_circle {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@keyframes rotate_circle {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
 /* apparition de la page menu */
 @-webkit-keyframes apparition {
   from {
@@ -150,53 +106,42 @@
 /* remplissage coeur favori */
 @-webkit-keyframes heart {
   0% {
-    -webkit-transition-property: background;
-    transition-property: background;
-    -webkit-transition-duration: 1s;
-            transition-duration: 1s;
-    -webkit-transition-timing-function: linear;
-            transition-timing-function: linear;
-    -webkit-transform: scale3D(0.1, 1, 0.1);
-            transform: scale3D(0.1, 1, 0.1);
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
     opacity: 0;
   }
   50% {
     opacity: 0.3;
-    -webkit-transform: scale3D(0.6, 1, 0.6);
-            transform: scale3D(0.6, 1, 0.6);
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 @keyframes heart {
   0% {
-    -webkit-transition-property: background;
-    transition-property: background;
-    -webkit-transition-duration: 1s;
-            transition-duration: 1s;
-    -webkit-transition-timing-function: linear;
-            transition-timing-function: linear;
-    -webkit-transform: scale3D(0.1, 1, 0.1);
-            transform: scale3D(0.1, 1, 0.1);
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
     opacity: 0;
   }
   50% {
     opacity: 0.3;
-    -webkit-transform: scale3D(0.6, 1, 0.6);
-            transform: scale3D(0.6, 1, 0.6);
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 body {
-  margin: 0;
+  max-width: 1500px;
+  margin: auto;
   padding: 0;
 }
 
@@ -424,7 +369,7 @@ footer a:hover {
 .section_menu .categorie .plat .nom_plat {
   display: block;
   height: 35px;
-  padding: 5px 0px 0px 5px;
+  padding: 10px 0px 0px 10px;
   font-size: 0.9em;
   width: 100%;
   position: relative;
@@ -456,35 +401,39 @@ footer a:hover {
 
 .section_menu .categorie .plat .check {
   background: #99E2D0;
-  width: 50px;
-  height: inherit;
+  width: 65px;
   border-radius: 0px 10px 10px 0px;
   border-width: 2px;
   border-color: #99E2D0;
-  display: none;
+  margin: 0px -80px 0px 0px;
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
+}
+
+.section_menu .categorie .plat .check .rotate_check {
+  padding-top: 25%;
+  padding-left: 30%;
 }
 
 .section_menu .categorie .plat .check .fa-check-circle {
-  padding: 25%;
-  -webkit-animation: 0.4s linear rotate_circle;
-          animation: 0.4s linear rotate_circle;
-}
-
-.section_menu .categorie .plat .check .fa-check-circle:before {
   color: white;
   background-color: #99E2D0;
   border-radius: 50%;
   border-color: #99E2D0;
   border-width: 2px;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
-.section_menu .plat:hover .check {
-  display: block;
-  -webkit-animation: 0.2s linear slide;
-          animation: 0.2s linear slide;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  /*empeche la repetition */
+.section_menu .categorie .plat:hover .check {
+  margin-right: -1px;
+}
+
+.section_menu .categorie .plat:hover .fa-check-circle {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 .section_menu button.commander {
@@ -619,6 +568,16 @@ footer a:hover {
   .section_menu .categorie {
     width: 30%;
   }
+  .section_menu .plat {
+    height: 60px;
+  }
+  .section_menu .plat .description {
+    padding-top: 10px;
+  }
+  .section_menu .plat .rotate_check {
+    padding-top: 40%;
+    padding-left: 30%;
+  }
   footer {
     text-align: center;
     height: 150px;
@@ -740,8 +699,6 @@ h2 {
           align-items: center;
   background-color: #f2f2f2;
   border-radius: 15px 15px 15px 15px;
-  -webkit-box-shadow: #898989;
-          box-shadow: #898989;
   height: 50px;
   width: 90%;
   margin: 10px 0px 10px 0px;
@@ -890,38 +847,25 @@ h2 {
 
 .restaurant figure figcaption .heart {
   display: block;
+  position: absolute;
+  bottom: 10%;
+  right: 3%;
 }
 
-.restaurant figure figcaption .heart .fas {
-  display: none;
+.restaurant figure figcaption .fa-heart {
+  color: black;
+  font-size: 1.3em;
 }
 
-.restaurant figure figcaption .heart .far {
-  display: block;
-  padding: 10px 30px 1px 0px;
-  background: #353535;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  z-index: 2;
+.restaurant figure figcaption .fa-heart:before {
+  content: "\f004";
+  -webkit-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
 }
 
-.restaurant figure figcaption .heart:hover {
-  -webkit-animation: 300ms heart linear;
-          animation: 300ms heart linear;
-}
-
-.restaurant figure figcaption .heart:hover .fas {
-  padding: 10px 30px 1px 0px;
-  display: block;
-  background: linear-gradient(175deg, #ff79d9, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  z-index: 2;
-}
-
-.restaurant figure figcaption .heart:hover .far {
-  display: none;
+.restaurant figure figcaption .fa-heart:hover:before {
+  color: #ce68da;
+  font-weight: bold;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
